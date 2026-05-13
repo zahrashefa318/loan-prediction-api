@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+numpy
+sqlalchemy
+pydantic
+python-dotenv
+PyJWT
+python-multipart
+pytest
+httpx
+numpy
+pandas
+matplotlib
