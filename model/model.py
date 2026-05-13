@@ -16,9 +16,10 @@ debt=np.random.randint(0, 2000, N)
 disposable_income=income - expenses - rent - debt
 #disposable_income=np.maximum(disposable_income, 0) I removed this feature because it was breaking the value if it was negative to 0 and this makes the value to have non linear relationship with outputs.
 loan_amount=(
+            disposable_income * 0.5 +
              savings * 0.3 +
              years_employed * 500 -
-             family_size * 2000
+             family_size * 200
              )
 
 
