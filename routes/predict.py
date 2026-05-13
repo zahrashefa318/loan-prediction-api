@@ -36,7 +36,7 @@ def predict(data:payload_structure,bg:BackgroundTasks,idem:str=Header(...,alias=
             cached_hashed_req=return_hashed_req(idem,db)
             if hashed_request == cached_hashed_req:
                 response=cached_response(idem,db)
-                return {'predicted loan':response}
+                return {'predicted loan':round(response,2)}
             else :
                 raise HTTPException (status_code=409, detail="Idempotency key and request payload mismatch!")
         #extract the features as the same order in the training

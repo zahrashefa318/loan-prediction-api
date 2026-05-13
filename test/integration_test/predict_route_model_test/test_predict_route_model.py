@@ -17,3 +17,4 @@ def test_predict_route_model(client,valid_token,override_env):
     assert res.status_code==200
     assert "predicted loan" in res.json()
     assert isinstance(res.json()["predicted loan"],float)
+    
