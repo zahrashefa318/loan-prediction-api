@@ -241,13 +241,13 @@ uvicorn app.main:app --reload
 API available at:
 
 ```bash
-http://127.0.0.1:8000
+https://loan-prediction-api-pdr2.onrender.com
 ```
 
 Swagger Documentation:
 
 ```bash
-http://127.0.0.1:8000/docs
+https://loan-prediction-api-pdr2.onrender.com/docs
 ```
 
 ---
