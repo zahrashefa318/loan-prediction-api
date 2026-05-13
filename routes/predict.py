@@ -24,12 +24,12 @@ class payload_structure(BaseModel):
     rent:float
     debt:float
 
-model=load_model()
+
     
 
 @router.post('/predict')
 def predict(data:payload_structure,bg:BackgroundTasks,idem:str=Header(...,alias="Idempotency-Key"),user:dict=Depends(is_authorized),db:Session=Depends(get_db)):
-    
+    model=load_model()
     try:
         hashed_request=hash_request(data)
         if idem_check(idem,db):
@@ -66,7 +66,8 @@ def predict(data:payload_structure,bg:BackgroundTasks,idem:str=Header(...,alias=
 
         #save the predicted value in the db for later same requests from same user.
         
-        
+        print(w)
+        print(b)
         expiration_date=datetime.utcnow()+ timedelta(seconds=120)
         record=Idem_tbl(idem_key=idem,hashed_req=hashed_request,cached_res=float(y_pred),expiry_date=expiration_date)
         db.add(record)

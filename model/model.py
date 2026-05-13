@@ -84,6 +84,8 @@ y_pred_test=y_pred_test*y_train_std + y_train_mean #because I scaled (normalized
 y_pred_test=np.maximum(y_pred_test,0)
 mae = np.mean(np.abs(y_pred_test - y_test))
 print("MAE:", mae)
+print("Weights:", w)
+print("Bias:", b)
 
 with open('test_predictions.txt', 'w') as f:
     for pred, actual in zip(y_pred_test, y_test):
